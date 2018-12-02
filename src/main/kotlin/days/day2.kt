@@ -5,6 +5,7 @@ import readInputFile
 fun day2() {
     val input = readInputFile("inputs/day2.txt")
     println(day2part1(input))
+    println(day2part2(input))
 }
 
 fun day2part1(input: String): Int {
@@ -28,7 +29,25 @@ fun day2part1(input: String): Int {
 }
 
 fun day2part2(input: String): Any {
-    TODO()
+    val boxIds = parseInput(input)
+    return boxIds
+        .flatMap { id ->
+            (boxIds - id).map { Pair(id, it) }
+        }
+        .map { list -> differenceCountAndCommonChars(list.first, list.second) }
+        .first { it.first == 1 }
+        .let { it.second }
+}
+
+private fun differenceCountAndCommonChars(a: String, b: String): Pair<Int, String> {
+    require(a.length == b.length) { "Strings must be same length" }
+    return a.toCharArray().zip(b.toCharArray())
+        .filter { it.first == it.second }
+        .map { it.first }
+        .joinToString("")
+        .let {
+            Pair(a.length - it.length, it)
+        }
 }
 
 private fun parseInput(input: String): List<String> {
