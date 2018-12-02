@@ -10,6 +10,7 @@ object Day2Spec : Spek({
 
     describe("Day 2") {
         describe("Part 1") {
+            @Suppress("SpellCheckingInspection")
             val input1 = """
                 abcdef
                 bababc
@@ -20,8 +21,31 @@ object Day2Spec : Spek({
                 ababab
             """.trimIndent()
 
+            @Suppress("SpellCheckingInspection")
+            val input2 = """
+                aaabb
+                aabb
+                aabb
+                abc
+                aaaa
+                aabb
+            """.trimIndent()
+
+            @Suppress("SpellCheckingInspection")
+            val input3 = """
+                aaa
+                bbb
+                aabbb
+                aabb
+                abc
+                aaaa
+                aaab
+            """.trimIndent()
+
             it("returns a checksum of the given input") {
                 assertEquals(12, day2part1(input1))
+                assertEquals(4, day2part1(input2))
+                assertEquals(8, day2part1(input3))
             }
         }
     }

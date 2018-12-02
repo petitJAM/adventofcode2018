@@ -1,6 +1,7 @@
 @file:JvmName("Main")
 
 import days.day1
+import days.day2
 
 fun main(args: Array<String>) {
     println("Advent of Code 2018")
@@ -21,7 +22,7 @@ private fun io() {
             "\n" -> {
                 printWelcome()
             }
-            in days -> run(input)
+            in days -> run(input.toInt())
             else -> println("Unknown input D: <$input>")
         }
         println()
@@ -34,9 +35,10 @@ private fun printWelcome() {
     println("Enter day number of 'q' to quit: ")
 }
 
-private fun run(day: String) {
+private fun run(day: Int) {
     when (day) {
-        "1" -> day1()
+        1 -> day1()
+        2 -> day2()
         else -> println("Day incomplete")
     }
 }
