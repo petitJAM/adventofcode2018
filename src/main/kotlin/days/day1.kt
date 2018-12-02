@@ -4,15 +4,15 @@ import readInputFile
 
 fun day1() {
     val input = readInputFile("inputs/day1.txt")
-    println(solve1(input))
-    println(solve2(input))
+    println(day1part1(input))
+    println(day1part2(input))
 }
 
-fun solve1(input: String): Int {
+fun day1part1(input: String): Int {
     return parseInput(input).sum()
 }
 
-fun solve2(input: String): Int {
+fun day1part2(input: String): Int {
     var currentFrequency = 0
     val seenFrequencies = mutableSetOf(currentFrequency)
 

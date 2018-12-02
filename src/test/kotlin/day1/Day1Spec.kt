@@ -1,11 +1,12 @@
 package day1
 
-import days.solve1
-import days.solve2
+import days.day1part1
+import days.day1part2
 import org.spekframework.spek2.Spek
 import org.spekframework.spek2.style.specification.describe
 import kotlin.test.assertEquals
 
+@Suppress("unused")
 object Day1Spec : Spek({
 
     describe("day 1") {
@@ -36,9 +37,9 @@ object Day1Spec : Spek({
             }
 
             it("finds the sum of the numbers") {
-                assertEquals(3, solve1(input1))
-                assertEquals(0, solve1(input2))
-                assertEquals(-6, solve1(input3))
+                assertEquals(3, day1part1(input1))
+                assertEquals(0, day1part1(input2))
+                assertEquals(-6, day1part1(input3))
             }
         }
 
@@ -81,10 +82,10 @@ object Day1Spec : Spek({
             }
 
             it("finds the first frequency that is reached twice") {
-                assertEquals(0, solve2(input1))
-                assertEquals(10, solve2(input2))
-                assertEquals(5, solve2(input3))
-                assertEquals(14, solve2(input4))
+                assertEquals(0, day1part2(input1))
+                assertEquals(10, day1part2(input2))
+                assertEquals(5, day1part2(input3))
+                assertEquals(14, day1part2(input4))
             }
         }
     }
