@@ -2,6 +2,7 @@
 
 import days.day1
 import days.day2
+import days.day3
 
 fun main(args: Array<String>) {
     println("Advent of Code 2018")
@@ -39,6 +40,7 @@ private fun run(day: Int) {
     when (day) {
         1 -> day1()
         2 -> day2()
+        3 -> day3()
         else -> println("Day incomplete")
     }
 }
